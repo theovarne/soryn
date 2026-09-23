@@ -1,0 +1,44 @@
+.debug-viewer { min-width: 0; }
+.debug-viewer .code-toolbar { min-height: 28px; height: auto; padding-block: 4px; }
+.debug-viewer .code-actions { flex-wrap: wrap; justify-content: flex-end; gap: 4px 10px; }
+.debug-readonly { color: var(--dim); font-weight: normal; }
+.debug-subbar { min-height: 29px; display: flex; align-items: center; justify-content: space-between; gap: 8px; border-bottom: 1px solid var(--line); background: #0a0b09; }
+.debug-viewer .inspection-tabs { min-height: 28px; padding: 3px 8px 0; border: 0; flex: 1 1 auto; }
+.debug-find { display: flex; align-items: center; gap: 6px; flex: 0 1 155px; min-width: 90px; margin-right: 8px; }
+.debug-find input { width: 100%; min-width: 0; padding: 3px 5px; border: 1px solid var(--line-2); outline: none; border-radius: 0; background: #080808; color: var(--text-2); font: inherit; }
+.debug-find input::placeholder { color: #596052; }
+.debug-find input:focus { border-color: #69753f; }
+.debug-viewer .code-scroll { max-height: 345px; min-height: 155px; padding: 7px 0; white-space: normal; overflow: auto; scrollbar-color: #4c5638 #080808; scrollbar-width: thin; }
+.debug-viewer .code-scroll::-webkit-scrollbar { width: 7px; height: 7px; }
+.debug-viewer .code-scroll::-webkit-scrollbar-track { background: #080808; }
+.debug-viewer .code-scroll::-webkit-scrollbar-thumb { background: #4c5638; border: 2px solid #080808; border-radius: 9px; }
+.debug-viewer .code-scroll::-webkit-scrollbar-thumb:hover { background: #718044; }
+.debug-line { display: grid; grid-template-columns: 38px 16px minmax(0,1fr); align-items: start; min-height: 16px; padding-right: 9px; line-height: 16px; }
+.debug-line:hover, .debug-line:focus-within { background: #15180f; }
+.debug-number { padding-right: 8px; color: #51594b; text-align: right; user-select: none; border-right: 1px solid #1d2219; }
+.debug-fold, .debug-fold-spacer { display: inline-block; width: 15px; min-height: 16px; margin: 0; padding: 0; }
+.debug-fold { appearance: none; border: 0; background: none; color: #86965e; cursor: pointer; font: inherit; line-height: 16px; text-align: center; }
+.debug-fold:hover, .debug-fold:focus-visible { color: var(--up); outline: none; }
+.debug-content { display: block; min-width: 0; width: max-content; max-width: none; padding-left: calc(var(--debug-depth) * 13px); white-space: pre; font: inherit; }
+.debug-summary { color: #70796b; }
+.debug-viewer.is-wrapped .debug-content { width: auto; max-width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; }
+.debug-viewer.is-wrapped .debug-result { overflow-wrap: anywhere; }
+.debug-viewer.is-collapsed .code-scroll { min-height: 0; max-height: 66px; }
+.debug-viewer .json-key { color: #91a077; }
+.debug-viewer .json-string { color: #b4b2a5; }
+.debug-viewer .json-number { color: #c4b77f; }
+.debug-viewer .json-boolean { color: #a2b88d; }
+.debug-viewer .json-null { color: #788172; }
+.debug-result { overflow: hidden; text-overflow: ellipsis; }
+.debug-match { padding: 0 1px; background: #778b32; color: #0a0b09; }
+.debug-empty { padding: 12px 18px; }
+.debug-viewer .inspection-status { min-height: 22px; padding: 4px 9px; }
+.debug-enter { animation: debug-fade .12s ease-out; }
+@keyframes debug-fade { from { opacity: .76; } to { opacity: 1; } }
+@media (max-width: 600px) {
+  .debug-subbar { align-items: stretch; flex-wrap: wrap; }
+  .debug-viewer .inspection-tabs { min-width: 100%; }
+  .debug-find { flex: 1 1 auto; margin: 0 8px 6px; }
+  .debug-viewer .code-scroll { max-height: 285px; }
+}
+@media (prefers-reduced-motion: reduce) { .debug-enter { animation: none; } }

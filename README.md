@@ -152,4 +152,3 @@ The browser configuration is fixed in `dist/config.js`, including the public wal
 ## Disclaimer
 
 SORYN is experimental software for market observation and simulation. Nothing in this repository constitutes financial advice.
-

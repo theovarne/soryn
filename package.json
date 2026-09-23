@@ -1,0 +1,20 @@
+{
+  "name": "soryn-solana-snapshot",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "dependencies": {
+    "@vercel/global-config": "^1.5.1"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

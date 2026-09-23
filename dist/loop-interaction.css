@@ -1,0 +1,108 @@
+.interactive-loop .loop-edge,
+.interactive-loop .loop-node .loop-ring,
+.interactive-loop .loop-node .loop-dot,
+.interactive-loop .loop-node text {
+  transition: stroke .28s ease, fill .28s ease, opacity .28s ease, stroke-width .28s ease, filter .28s ease;
+}
+
+.interactive-loop .loop-node.is-current .loop-ring {
+  animation: loop-breathe 2.8s ease-in-out infinite;
+}
+.interactive-loop .loop-node.is-current .loop-dot {
+  filter: drop-shadow(0 0 2px rgba(215, 255, 60, .35));
+}
+.interactive-loop .loop-node.is-hovered .loop-ring,
+.interactive-loop .loop-node:focus-visible .loop-ring {
+  stroke: var(--text);
+  stroke-width: 1.6;
+}
+.interactive-loop .loop-node.is-hovered text,
+.interactive-loop .loop-node:focus-visible text {
+  fill: var(--text);
+}
+.interactive-loop .loop-edge.is-inspected {
+  stroke: var(--text-2);
+  stroke-width: 1.5;
+  opacity: .95;
+}
+.interactive-loop .loop-edge-signal {
+  fill: none;
+  stroke: var(--up);
+  stroke-width: 1.6;
+  stroke-dasharray: 8 300;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .28s ease;
+}
+.interactive-loop .loop-edge-signal.is-leading {
+  opacity: .72;
+  animation: loop-advance 3.2s linear infinite;
+}
+.loop-hover {
+  position: absolute;
+  z-index: 1;
+  right: 4%;
+  top: 145px;
+  width: min(210px, 22%);
+  padding: 5px 8px;
+  color: var(--text-2);
+  background: var(--panel);
+  border-left: 1px solid var(--line-2);
+  line-height: 15px;
+  pointer-events: none;
+}
+.loop-hover[hidden] { display: none; }
+.loop-linked-detail {
+  min-height: 31px;
+  max-height: 31px;
+  overflow: hidden;
+  padding: 5px 2px 0;
+  color: var(--label);
+  line-height: 13px;
+  overflow-wrap: anywhere;
+  border-top: 1px solid var(--line);
+}
+.table-scroll .loop-row-hover {
+  box-shadow: inset 2px 0 var(--text-2);
+  background: var(--panel-2);
+}
+.table-scroll .loop-row-selected {
+  box-shadow: inset 2px 0 var(--up);
+  background: #15180f;
+}
+.table-scroll .loop-row-hover .cell:first-child,
+.table-scroll .loop-row-selected .cell:first-child { color: var(--text); }
+.brain-loop .loop-detail {
+  line-height: 15px;
+  gap: 7px 18px;
+}
+.brain-loop .loop-detail > div {
+  grid-template-columns: 116px minmax(0, 1fr);
+}
+
+@keyframes loop-breathe {
+  0%, 100% { stroke-width: 1; filter: none; }
+  50% { stroke-width: 1.6; filter: drop-shadow(0 0 3px rgba(215, 255, 60, .3)); }
+}
+@keyframes loop-advance {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -308; }
+}
+
+@media (max-width: 760px) {
+  .brain-loop .loop-hover {
+    position: static;
+    width: auto;
+    margin: 0 0 6px;
+  }
+  .brain-loop .loop-detail > div {
+    grid-template-columns: 104px minmax(0, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .interactive-loop .loop-node.is-current .loop-ring,
+  .interactive-loop .loop-edge-signal.is-leading {
+    animation: none;
+  }
+  .interactive-loop .loop-edge-signal.is-leading { opacity: .5; }
+}

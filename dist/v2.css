@@ -1,0 +1,28 @@
+.tile.up { background: var(--heat-up-1); }
+.mover.neutral { background: var(--heat-none); }
+.live-dot.is-off { background: var(--down); box-shadow: none; }
+.state-active { box-shadow: inset 2px 0 0 var(--up); }
+.wallet-address { border: 1px solid var(--line-2); background: var(--panel); padding: 10px; display: flex; align-items: center; justify-content: space-between; gap: 16px; word-break: break-all; }
+.wallet-actions { display: flex; align-items: center; gap: 12px; flex: none; }
+.text-button { border: 0; padding: 0; background: transparent; color: var(--text-2); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.text-button:hover, .text-button:focus-visible { color: var(--text); outline: none; }
+.external-tiles { border: 1px solid var(--line-2); background: var(--heat-bg); padding: 6px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.external-tiles .external-tile { height: 65px; gap: 1px; }
+.external-tile > span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.external-tile > span:last-child { font-size: 9px; }
+.tile-symbol { max-width: calc(100% - 6px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tile.project-token { position: relative; box-shadow: inset 0 1px 0 var(--up); }
+.tile.project-token .tile-symbol { max-width: calc(100% - 8px); }
+.tile-project-tag { position: absolute; top: 1px; right: 2px; font-size: 7px; line-height: 7px; color: var(--up); }
+.tile.project-token > span:first-child { margin-top: 6px; }
+.tooltip { max-width: min(360px, calc(100vw - 16px)); max-height: calc(100vh - 16px); overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
+.system-live-inline { margin-left: 5px; font-weight: normal; }
+.card { border-top: 1px solid var(--line); padding-top: 8px; }
+.nav-github { display: inline-flex; align-items: center; justify-content: center; flex: none; line-height: 1; }
+.nav-github svg { width: 13px; height: 13px; display: block; fill: currentColor; }
+.nav-github:focus-visible { outline: 1px solid var(--text); outline-offset: 3px; }
+
+@media (max-width: 720px) {
+  .wallet-address { align-items: flex-start; flex-direction: column; }
+  .external-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

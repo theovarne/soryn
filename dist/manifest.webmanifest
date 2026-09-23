@@ -1,0 +1,12 @@
+{
+  "name": "SORYN",
+  "short_name": "soryn",
+  "description": "A small autonomous market observer living on Solana.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0b0b",
+  "theme_color": "#0b0b0b",
+  "icons": [
+    { "src": "/assets/soryn-logo.png", "sizes": "1392x1424", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
