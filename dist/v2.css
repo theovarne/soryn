@@ -18,7 +18,8 @@
 .tooltip { max-width: min(360px, calc(100vw - 16px)); max-height: calc(100vh - 16px); overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
 .system-live-inline { margin-left: 5px; font-weight: normal; }
 .card { border-top: 1px solid var(--line); padding-top: 8px; }
-.nav-github { display: inline-flex; align-items: center; justify-content: center; flex: none; line-height: 1; }
+.nav-github { display: inline-flex; align-items: center; justify-content: center; flex: none; line-height: 1; opacity: .68; transition: opacity .12s linear, color .12s linear; }
+.nav-github:hover, .nav-github:focus-visible { opacity: 1; }
 .nav-github svg { width: 13px; height: 13px; display: block; fill: currentColor; }
 .nav-github:focus-visible { outline: 1px solid var(--text); outline-offset: 3px; }
 
@@ -26,3 +27,4 @@
   .wallet-address { align-items: flex-start; flex-direction: column; }
   .external-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
