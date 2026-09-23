@@ -27,4 +27,3 @@
   .wallet-address { align-items: flex-start; flex-direction: column; }
   .external-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-
