@@ -70,7 +70,7 @@ function walletControl(address, explorerUrl, full = false) {
 }
 function shell(body) {
   const last = getRecord()[0];
-  return `<main class="col"><header><div class="site-header"><div class="brand-lockup"><a class="brand t-head c-text" href="/">${PROJECT_NAME}</a><span class="t-meta c-faint">${PROJECT_NUMBER}</span></div><nav class="nav t-base">${routes.map(nav).join("")}<a href="https://x.com/SORYN_rh" target="_blank" rel="noreferrer" class="nav-lnk">x</a></nav></div><nav class="mobile-nav t-base">${routes.map(nav).join("")}<a href="https://x.com/SORYN_rh" target="_blank" rel="noreferrer" class="nav-lnk">x</a></nav><div class="last-line t-meta"><span class="c-dim">last thing it did</span>&nbsp;<span class="c-label">${last ? esc(last.text) + " · " + age(last.timestamp) : "no record yet"}</span>${tokenCaMarkup(observation?.projectTokenConfig)}</div></header>${body}<footer class="footer-note t-meta c-dim"><span>${PROJECT_NAME} · solana snapshot</span><span>${c().network || NETWORK_CONFIG.name} · ${c().cluster || NETWORK_CONFIG.cluster} · all times ET</span></footer></main><div id="tooltip" class="tooltip t-meta" hidden></div>`;
+  return `<main class="col"><header><div class="site-header"><div class="brand-lockup"><a class="brand t-head c-text" href="/">${PROJECT_NAME}</a><span class="t-meta c-faint">${PROJECT_NUMBER}</span></div><nav class="nav t-base">${routes.map(nav).join("")}<a href="https://x.com/soryn_day" target="_blank" rel="noreferrer" class="nav-lnk">x</a></nav></div><nav class="mobile-nav t-base">${routes.map(nav).join("")}<a href="https://x.com/soryn_day" target="_blank" rel="noreferrer" class="nav-lnk">x</a></nav><div class="last-line t-meta"><span class="c-dim">last thing it did</span>&nbsp;<span class="c-label">${last ? esc(last.text) + " · " + age(last.timestamp) : "no record yet"}</span>${tokenCaMarkup(observation?.projectTokenConfig)}</div></header>${body}<footer class="footer-note t-meta c-dim"><span>${PROJECT_NAME} · solana snapshot</span><span>${c().network || NETWORK_CONFIG.name} · ${c().cluster || NETWORK_CONFIG.cluster} · all times ET</span></footer></main><div id="tooltip" class="tooltip t-meta" hidden></div>`;
 }
 function tile(item) {
   const symbol = item.symbol || short(mint(item), 4, 3), movement = move(item), project = Boolean(item.project || item.feeds?.includes("project"));
@@ -155,7 +155,7 @@ function brain() {
 
 const pages = { home, day, holdings, board: boardPage, chain: chainPage, brain };
 function bind() {
-  document.querySelectorAll("a.nav-lnk").forEach(a => { if (a.textContent.trim().toLowerCase() === "x") { a.href = "https://x.com/SORYN_rh"; a.target = "_blank"; a.rel = "noreferrer"; } });
+  document.querySelectorAll("a.nav-lnk").forEach(a => { if (a.textContent.trim().toLowerCase() === "x") { a.href = "https://x.com/soryn_day"; a.target = "_blank"; a.rel = "noreferrer"; } });
   const tooltip = document.querySelector("#tooltip");
   document.querySelectorAll("[data-tooltip]").forEach(item => {
     const show = event => {
