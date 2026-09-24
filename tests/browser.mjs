@@ -12,7 +12,7 @@ try {
   await page.goto(base + '/', { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForTimeout(1500);
   assert.match(await page.locator('body').innerText(), /soryn lives on solana/i);
-  assert.equal(await page.locator('a.nav-lnk').filter({ hasText: 'x' }).first().getAttribute('href'), 'https://x.com/SORYN_rh');
+  assert.equal(await page.locator('a.nav-lnk').filter({ hasText: 'x' }).first().getAttribute('href'), 'https://x.com/soryn_day');
   const api = await page.evaluate(async () => fetch('/api/agent').then(response => response.json()));
   assert.equal(api.chain.network, 'solana');
   assert.equal(api.chain.cluster, 'mainnet-beta');
